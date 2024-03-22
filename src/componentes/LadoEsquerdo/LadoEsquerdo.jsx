@@ -1,6 +1,6 @@
 import './LadoEsquerdo.css';
 
 const LadoEsquerdo = () => {
-    return <aside>LadoEsquerdo</aside>
+    return <aside></aside>
 };
 export default LadoEsquerdo;
