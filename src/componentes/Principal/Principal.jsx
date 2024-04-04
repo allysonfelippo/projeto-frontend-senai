@@ -1,42 +1,37 @@
-import React from 'react';
+import React from "react";
 import BotaoContador from "../BotaoContador/BotaoContador";
-import BotaoCustomizado from '../BotaoCustomizado/BotaoCustomizado';
-import Formulario from '../Formulario/Formulario';
-import ListaCompras from '../ListaCompras/ListaCompras';
-import ListaProdutos from '../ListaProdutos/ListaProdutos';
-import './Principal.css';
+import BotaoCustomizado from "../BotaoCustomizado/BotaoCustomizado";
+import Formulario from "../Formulario/Formulario";
+import ListaCompras from "../ListaCompras/ListaCompras";
+import ListaProdutos from "../ListaProdutos/ListaProdutos";
+import "./Principal.css";
 
 const Principal = () => {
-    return (
-        <main>
-            <nav>
-                <BotaoCustomizado tipo="primario" onClick={() =>
-                    setExemplo("listaProdutos")}>
-                    ListaProdutos
-                </BotaoCustomizado>
+  const [exemplo, setExemplo] = React.useState("");
 
-                <BotaoCustomizado tipo="secundario" onClick={() =>
-                    setExemplo("botaoContador")}>
-                    BotaoContador
-                </BotaoCustomizado>
+  return (
+    <main>
+      <nav>
+        <BotaoCustomizado tipo="primario" onClick={() => setExemplo("listaProdutos")}>
+          ListaProdutos
+        </BotaoCustomizado>
+        <BotaoCustomizado tipo="secundario" onClick={() => setExemplo("botaoContador")}>
+          BotaoContador
+        </BotaoCustomizado>
+        <BotaoCustomizado tipo="" onClick={() => setExemplo("formulario")}>
+          Formulário
+        </BotaoCustomizado>
+        <BotaoCustomizado tipo="primario" onClick={() => setExemplo("listaCompras")}>
+          Lista Compras
+        </BotaoCustomizado>
+      </nav>
 
-                <BotaoCustomizado tipo="" onClick={() => setExemplo("formulario")}>
-                    Formuário	          Formulário
-                </BotaoCustomizado>
-                
-                <BotaoCustomizado tipo="" onClick={() => setExemplo("listaCompras")}>
-                    Lista Compras
-                </BotaoCustomizado>
-
-            </nav>
-
-            {exemplo === "listaProdutos" && <ListaProdutos />}
-            {exemplo === "botaoContador" && <BotaoContador />}
-            {exemplo === "formulario" && <Formulario />}
-            {exemplo === "listaCompras" && <ListaCompras />}
-        </main>
-    );
-
+      {exemplo === "listaProdutos" && <ListaProdutos />}
+      {exemplo === "botaoContador" && <BotaoContador />}
+      {exemplo === "formulario" && <Formulario />}
+      {exemplo === "listaCompras" && <ListaCompras />}
+    </main>
+  );
 };
 
 export default Principal;
